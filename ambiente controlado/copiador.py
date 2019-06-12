@@ -1,7 +1,7 @@
 import os
 import shutil
 
-src = os.getcwd()
+src = "C:/cnc"
 print(src)
 
 src_files = os.listdir(src)
