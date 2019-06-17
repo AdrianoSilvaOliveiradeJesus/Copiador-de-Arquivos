@@ -1,12 +1,17 @@
 import os
 import shutil
 
-src = os.getcwd()
-print(src)
+#caminho de copia do arquivo
+src = "D:/"
+#diretorio alvo
+target = "C:/cnc"
 
+#lista os arquivos do diretorio
 src_files = os.listdir(src)
-print(src_files)
 for file_name in src_files:
- full_file_name = os.path.join(src, file_name)
- if os.path.isfile(full_file_name):
-    shutil.copy(full_file_name, "/home/metalzilo/Área de Trabalho/Copiador-de-Arquivos/ambiente controlado/cnc")
+ #separa a extencao do nome do arquivo
+ arquivoExtencao = file_name.split(".")
+ #se a extencao e igual a .pim ele copia para outro diretorio
+ if(arquivoExtencao[1] == "pim"):
+   full_file_name = os.path.join(src, file_name)
+   shutil.copy(full_file_name, target)
